@@ -31,7 +31,7 @@
 \begin{enumerate}
 \item Készítsünk \LaTeX{} dokumentumot a szokásos módon. \pause
 \item A preambulumban töltsük be a diacsomagot a \color{red}{\verb|\usepackage{pdfslide}|}\color{black}paranccsal. Ezt az utolsó csomagként kell betölteni. Kötelező a hyperref.sty 6.60-as vagy újabb verziója telepítve legyen a rendszerére. \pause
-\item Futtassuk a pdfLATEX-et a dokumentumon, így megkapjuk a pdf kimenetet
+\item Futtassuk a pdf\LaTeX{}-et a dokumentumon, így megkapjuk a pdf kimenetet
 amelyet az Acrobat Readerrel tekinthetünk meg.
  
 \end{enumerate}
@@ -48,23 +48,22 @@ Diát \color{red}{\verb|\section{Name}|} \color{black} paranccsal hozhatunk lét
 
 \begin{frame}[fragile]{Oldalátmenet}
 Kihasználhatja az Acrobat oldalátmeneti lehetőségeit.
-Specifikusan adja meg ezzel a parancssal
-\color{red}\verb|\pagedissolve{<opció>}| \color{black} \\
-\textbf{Parancsok az oldalátmenet} \\
+Amit a \color{red}\verb|\pagedissolve{<opció>}| \color{black}  parancs használatával lehet.\\
+\textbf{Oldalátmenet parancsai} \\
 \begin{table}[h]
 \begin{tabularx}{\textwidth}{l X}
-\verb|/split| & Két sor söpör végig a képernyőn, hogy felfedje az új oldal hasonló függönyt nyitni. \\
+\verb|/split| & Két sor söpör végig a képernyőn, hogy felfedje az új oldal tartalmát \\
 \verb|/blinds| & Hasonló a \verb|/Splithez|, de több sorral, amelyek hasonlítanak a „redőnyökhöz” \\
 
-\verb|/box|& A régi oldal közepétől egy doboz megnagyobbodik, hogy felfedje az újat \\
+\verb|/box|& A régi oldal közepétől egy doboz kezd el növekedni, hogy felfedje az új lap tartalmát \\
 
-\verb|/wipe|& Egyetlen sor „áttörli” a régi oldalt, hogy felfedje az újat. \\
+\verb|/wipe|& Egyetlen sor „áttörli” a régi oldalt, hogy felfedje az új lapot. \\
 
-\verb|/dissolve|& A régi oldal „feloldódik”, hogy felfedje az újat. \\
+\verb|/dissolve|& A régi oldal „feloldódik”, hogy felfedje az új lapot. \\
 
  \verb|/glitter|& Hasonló a \verb|/Dissolve|-hoz, kivéve, hogy az effektus egyik élről a másikra söpör. \\
 
-\verb|/R|&  A régi oldalt egyszerűen lecserélik az újra, minden különösebb dolog nélkül hatás. Ez az alapértelmezett. \\
+\verb|/R|&  A régi oldalt egyszerűen lecseréli az újra, minden különösebb effekt nélküli hatás. Ez az alapértelmezett. \\
 
 
 \end{tabularx}
@@ -75,7 +74,7 @@ Specifikusan adja meg ezzel a parancssal
 
 \begin{frame}[fragile]{Hátterek}
 \begin{itemize}
-\item Létrehozhatunk saját háttérgrafikát amit a \color{red}\verb|\overlay{<fájlnév>}|\color{black} paranccsal meghívhatunk meg őket.
+\item Létrehozhatunk saját háttérgrafikát amit a \color{red}\verb|\overlay{<fájlnév>}|\color{black} paranccsal hívhatunk meg.
 \pause
 
 \item A pdfslide csomag három grafikus fájlformátumot támogat:\textcolor{red}{\tt pdf, jpeg, png}. Az \textcolor{red}{\tt eps} és egyéb nem támogatott fájlokat Ghostscript segítségével konvertálhatjuk pdf formátumba.
@@ -90,7 +89,7 @@ határ.
 \begin{frame}
 \begin{tabular}{cc}
 \includegraphics[width=5cm]{egyen1} 1 & \includegraphics[width=5cm]{hatter1} 2 \\
-\includegraphics[width=5cm]{hatter2} 3 & \includegraphics[width=5cm]{hatter3} 3 \\ 
+\includegraphics[width=5cm]{hatter2} 3 & \includegraphics[width=5cm]{hatter3} 4 \\ 
 \end{tabular}
 \end{frame}
 
@@ -108,11 +107,11 @@ határ.
 \large \textbf{Betűtípusok} \\
 \normalsize
 A csomag az összes font attribútumot újra definiálja, hogy nagyobbak legyenek a szokásos méretnél.
-Ha azonban vissza akarunk térni az eredeti mérethez, akkor hozzá kell írni a real szót a font size parancs elé, azaz a \color{red}\verb|\normalsize| \color{black}esetén használjuk a \color{red}\verb|\realnormalsize| \color{black}parancsot; \color{red}\verb|\large| \color{black}pedig ez lesz \color{red}\verb|\reallarge| \color{black}és így tovább.
+Ha azonban vissza akarunk térni az eredeti mérethez, akkor hozzá kell írni a real szót a font size parancs elé, azaz a \color{red}\verb|\normalsize| \color{black}esetén használjuk a \color{red}\verb|\realnormalsize| \color{black}parancsot; \color{red}\verb|\large| \color{black}-ból pedig \color{red}\verb|\reallarge| \color{black}és így tovább.
 
 \large \textbf{Címsorok} \\
 \normalsize
-A \color{red}\verb|\section{...}| \color{black}használható a diák első szintű fejlécére. Ha több hely kihagyásra van szüksége, hagyja ki a címsor előtt, hogy az egész anyagot függőlegesen középre állítsa, módosíthatja a dimenziót a \color{red}\verb|\headskip|={<new dimension>} \color{black} paranccsal. Ez a parancs a szakasz címsora elé kell helyezni, és az aktuális dia végén vissza kell állítani, ha nem szeretné, hogy az aktuális tovább ugorjon.
+A \color{red}\verb|\section{...}| \color{black}használható a diák első szintű fejlécére. Ha több hely kihagyásra van szüksége, hagyja ki a címsor előtt, hogy az egész anyagot függőlegesen középre állítsa, módosíthatjuk a dimenziót a \color{red}\verb|\headskip|={<new dimension>} \color{black} paranccsal. Ezt a parancsot a szakasz címsora elé kell helyezni, és az aktuális dia végén vissza kell állítani, ha nem szeretnénk, hogy az aktuális oldalról tovább ugorjon a következőre.
 
 
 \end{frame}
